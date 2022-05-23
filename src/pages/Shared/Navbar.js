@@ -4,7 +4,7 @@ import logo from '../../image/logo.png'
 
 const Navbar = ({ children }) => {
     return (
-        <div class="navbar bg-base-100 sticky top-0 z-10 shadow-sm">
+        <div class="navbar bg-base-100 sticky top-0 z-20 shadow-sm">
             <div class="navbar-start">
 
                 <Link to='/'>
@@ -18,6 +18,7 @@ const Navbar = ({ children }) => {
                     <li><NavLink to='/blog'>Blog</NavLink></li>
                     <li><NavLink to='/Products'>Products</NavLink></li>
                     <li><NavLink to='/login'>Login</NavLink></li>
+                    <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
                 </ul>
             </div>
             <div class="dropdown dropdown-end ml-auto">
@@ -29,6 +30,7 @@ const Navbar = ({ children }) => {
                     <li><NavLink to='/blog'>Blog</NavLink></li>
                     <li><NavLink to='/Products'>Products</NavLink></li>
                     <li><NavLink to='/login'>Login</NavLink></li>
+                    <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
 
 
                 </ul>

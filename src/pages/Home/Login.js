@@ -1,11 +1,12 @@
 import React from 'react';
 import logo from '../../image/logo.png'
 import { Link } from 'react-router-dom';
+import banner from '../../image/bannerBg.png'
 
 const Login = () => {
     return (
-        <div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-md w-full space-y-8">
+        <div style={{ backgroundImage: `url(${banner})` }} class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-base-200 ">
+            <div class="max-w-md lg:w-1/2 p-8 space-y-8 shadow-lg bg-base-100 rounded-xl">
                 <div>
                     <img class="mx-auto h-12 w-auto" src={logo} alt="Workflow" />
                     <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
@@ -19,7 +20,7 @@ const Login = () => {
                     <div class="rounded-md shadow-sm -space-y-px">
                         <div>
                             <label for="email-address" class="sr-only">Email address</label>
-                            <input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-primary focus:z-10 sm:text-sm" placeholder="Email address" />
+                            <input id="email-address" name="email" type="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-primary focus:z-10 sm:text-sm" placeholder="Email address" />
                         </div>
                         <div>
                             <label for="password" class="sr-only">Password</label>
