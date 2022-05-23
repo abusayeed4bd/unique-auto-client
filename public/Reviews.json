@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "John Doe",
+        "title": "CEO",
+        "comment": "We are one of the best-in-class aftermarket automotive headlight manufacturers based in China.We are one of the best-in-class aftermarket automotive headlight manufacturers based in China. ",
+        "rating": 5
+    },
+    {
+        "id": 2,
+        "name": "John Doe",
+        "title": "CEO",
+        "comment": "We are one of the best-in-class aftermarket automotive headlight manufacturers based in China.We are one of the best-in-class aftermarket automotive headlight manufacturers based in China. ",
+        "rating": 4.7
+    },
+    {
+        "id": 3,
+        "name": "John Doe",
+        "title": "CEO",
+        "comment": "We are one of the best-in-class aftermarket automotive headlight manufacturers based in China.We are one of the best-in-class aftermarket automotive headlight manufacturers based in China. ",
+        "rating": 4
+    }
+]
