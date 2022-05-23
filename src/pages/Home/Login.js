@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../../image/logo.png'
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
@@ -10,7 +11,7 @@ const Login = () => {
                     <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
                     <p class="mt-2 text-center text-sm text-gray-600">
                         Or
-                        <a href="#" class="font-medium text-primary hover:text-indigo-500"> start your 14-day free trial </a>
+                        <Link to='/signup' class="font-medium text-primary hover:text-secondary"> Create an account </Link>
                     </p>
                 </div>
                 <form class="mt-8 space-y-6" action="#" method="POST">

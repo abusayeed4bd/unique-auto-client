@@ -4,7 +4,7 @@ import logo from '../../image/logo.png'
 
 const Navbar = ({ children }) => {
     return (
-        <div class="navbar bg-base-100 sticky top-0 z-10">
+        <div class="navbar bg-base-100 sticky top-0 z-10 shadow-sm">
             <div class="navbar-start">
 
                 <Link to='/'>

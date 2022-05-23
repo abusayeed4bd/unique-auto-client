@@ -11,7 +11,7 @@ const Banner = () => {
                     <h1 class="text-5xl font-bold">OEM and Aftermarket
                         Auto Parts Wholesale</h1>
                     <p class="py-6">We pride foremost on servicing custom and hard-to-find auto parts for your business needs, especially parts for classic cars, motorcycles and trucks, offering a complete supply chain solution to independent distributors, dealerships and wholesalers.</p>
-                    <button class="btn btn-primary">Get Started</button>
+                    <button class="btn btn-primary text-white ">Get Started</button>
                 </div>
             </div>
         </div>
