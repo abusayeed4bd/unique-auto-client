@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "name": "Car Light",
+        "img": "https://www.sunwayautoparts.com/wp-content/uploads/2020/06/Headlight-for-Mercedes-Benz-MB100-SCH5.jpg",
+        "price": 200,
+        "minOrder": 100,
+        "description": "We are one of the best-in-class aftermarket automotive headlight manufacturers based in China. ",
+        "available": 10000
+    },
+    {
+        "id": 2,
+        "name": "Car Mirror",
+        "img": "https://www.sunwayautoparts.com/wp-content/uploads/2021/08/automotive-mirror.jpg",
+        "price": 200,
+        "minOrder": 100,
+        "description": "We are one of the best-in-class aftermarket automotive headlight manufacturers based in China. ",
+        "available": 10000
+    },
+    {
+        "id": 3,
+        "name": "Engine Coil",
+        "img": "https://www.sunwayautoparts.com/wp-content/uploads/2020/06/Stator-Plate-for-Honda-SH125-SH150-SMSP061.jpg",
+        "price": 200,
+        "minOrder": 100,
+        "description": "We are one of the best-in-class aftermarket automotive headlight manufacturers based in China. ",
+        "available": 10000
+    }
+]
