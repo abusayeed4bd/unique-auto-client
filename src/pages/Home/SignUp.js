@@ -13,12 +13,14 @@ const SignUp = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
+
     const handelCreateUser = event => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
         console.log(email, password)
         createUserWithEmailAndPassword(email, password)
+        event.reset();
     }
     return (
         <div style={{ backgroundImage: `url(${banner})` }} class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-base-200 ">
@@ -35,18 +37,21 @@ const SignUp = () => {
 
                     <div class="rounded-md shadow-sm space-y-3">
                         <div className="w-full mx-auto">
-                            <input type="text" name="name" placeholder="Type here" class="input input-bordered w-full" />
+                            <input type="text" name="name" placeholder="Name" class="input input-bordered w-full" required />
                         </div>
                         <div className="w-full mx-auto">
-                            <input type="text" name="email" placeholder="Type here" class="input input-bordered w-full" />
+                            <input type="email" name="email" placeholder="Email" class="input input-bordered w-full" required />
                         </div>
                         <div className="w-full mx-auto">
-                            <input type="text" name="password" placeholder="Type here" class="input input-bordered w-full" />
+                            <input type="password" name="password" placeholder="Password" class="input input-bordered w-full" required />
                         </div>
                         {loading ? <input type="submit" className="btn btn-primary w-full" value="Creating Account..." /> : <input type="submit" className="btn btn-primary w-full" value="Create Account" />
 
                         }
                     </div>
+                    {
+                        error && <p className="text-error text-center">{error.message}</p>
+                    }
 
 
 

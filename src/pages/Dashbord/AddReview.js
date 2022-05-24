@@ -7,38 +7,40 @@ const AddReview = () => {
             <h2 className="text-3xl text-primary font-bold ">Add a Review</h2>
             <form className="w-[90%] mx-auto">
 
-                <div class="form-control w-full max-w-xs">
+                <div class="form-control w-full ">
                     <label class="label">
                         <span class="label-text">Name</span>
 
                     </label>
-                    <input type="text" placeholder="Name" class="input input-bordered w-full max-w-xs" />
+                    <input type="text" placeholder="Name" class="input input-bordered w-full " />
 
                 </div>
-                <div class="form-control w-full max-w-xs">
+                <div class="form-control w-full ">
                     <label class="label">
                         <span class="label-text">Title</span>
 
                     </label>
-                    <input type="text" placeholder="ex: CEO" class="input input-bordered w-full max-w-xs" />
+                    <input type="text" placeholder="ex: CEO" class="input input-bordered w-full " />
 
                 </div>
-                <div class="form-control w-full max-w-xs">
+                <div class="form-control w-full ">
                     <label class="label">
                         <span class="label-text">Ratings</span>
 
                     </label>
-                    <input type="number" placeholder="ratings out of 5" class="input input-bordered w-full max-w-xs" />
+                    <input type="number" placeholder="ratings out of 5" class="input input-bordered w-full " />
 
                 </div>
-                <div class="form-control w-full max-w-xs">
+                <div class="form-control w-full ">
                     <label class="label">
                         <span class="label-text">Review</span>
 
                     </label>
-                    <textarea type="text" placeholder="Review" class="input input-bordered w-full max-w-xs" />
+                    <textarea type="text" cols="30" rows="5" placeholder="Review" class="input input-bordered w-full h-32" />
+
 
                 </div>
+                <input type="submit" class="btn btn-primary w-full my-2" value="Submit" />
 
             </form>
         </div>
