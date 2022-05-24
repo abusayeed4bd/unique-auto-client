@@ -50,7 +50,7 @@ const Login = () => {
                             Sign in
                         </button>
                         <div class="divider">OR</div>
-                        <button className="btn btn-primary btn-outline w-full btn-sm">SignIn with Google</button>
+                        <button className="btn btn-primary btn-outline w-full btn-sm">Sign In with Google</button>
                     </div>
                 </form>
             </div>

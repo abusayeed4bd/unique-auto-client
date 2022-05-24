@@ -1,24 +1,24 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
+
     return (
         <div class="drawer drawer-mobile">
             <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-            <div class="drawer-content flex flex-col items-center justify-center bg-base-200">
+            <div class="drawer-content flex flex-col items-center  bg-base-200">
                 {/* <!-- Page content here --> */}
+                <Outlet />
                 <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
             </div>
-            <div class="drawer-side lg:z-10  relative">
+            <div class="drawer-side">
                 <label for="my-drawer-2" class="drawer-overlay"></label>
                 <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
                     {/* <!-- Sidebar content here --> */}
-                    <li><NavLink to='/dashboard/add'>Sidebar Item 1</NavLink></li>
-                    <li><NavLink to='/dashboard/add'>Sidebar Item 1</NavLink></li>
-                    <li><NavLink to='/dashboard/add'>Sidebar Item 1</NavLink></li>
-
-
+                    <li><NavLink to='/dashboard'>My Profile</NavLink></li>
+                    <li><NavLink to='/dashboard/orders'>My Orders</NavLink></li>
+                    <li><NavLink to='/dashboard/addReview'>Add a review</NavLink></li>
                 </ul>
 
             </div>
