@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import logo from '../../image/logo.png'
 import { Link } from 'react-router-dom';
 import banner from '../../image/bannerBg.png'
@@ -13,19 +13,29 @@ const SignUp = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
 
-    const handelCreateUser = event => {
+    const handelCreateUser = async (event) => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
+        const name = event.target.name.value;
         console.log(email, password)
-        createUserWithEmailAndPassword(email, password)
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName: name })
         toast.success('Account created successfully. verification email sent');
 
 
         // field reset
         event.target.reset();
+    }
+    if (user) {
+        console.log(user);
+    }
+    const handleGoogleLogin = () => {
+        signInWithGoogle()
     }
     return (
         <div style={{ backgroundImage: `url(${banner})` }} class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-base-200 ">
@@ -61,9 +71,11 @@ const SignUp = () => {
 
 
 
+
                 </form>
                 <div class="divider">OR</div>
-                <button className="btn btn-primary btn-outline w-full btn-sm">SignIn with Google</button>
+                {googleLoading ? <button className="btn btn-primary btn-outline w-full btn-sm">Loading ...</button> :
+                    <button onClick={handleGoogleLogin} className="btn btn-primary btn-outline w-full btn-sm">SignIn with Google</button>}
             </div>
         </div>
     );
