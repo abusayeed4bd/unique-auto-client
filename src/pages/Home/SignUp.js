@@ -4,6 +4,7 @@ import logo from '../../image/logo.png'
 import { Link } from 'react-router-dom';
 import banner from '../../image/bannerBg.png'
 import auth from '../../firebase.init';
+import { toast } from 'react-toastify';
 
 const SignUp = () => {
     const [
@@ -11,7 +12,7 @@ const SignUp = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
 
     const handelCreateUser = event => {
@@ -20,7 +21,11 @@ const SignUp = () => {
         const password = event.target.password.value;
         console.log(email, password)
         createUserWithEmailAndPassword(email, password)
-        event.reset();
+        toast.success('Account created successfully. verification email sent');
+
+
+        // field reset
+        event.target.reset();
     }
     return (
         <div style={{ backgroundImage: `url(${banner})` }} class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-base-200 ">
@@ -45,7 +50,7 @@ const SignUp = () => {
                         <div className="w-full mx-auto">
                             <input type="password" name="password" placeholder="Password" class="input input-bordered w-full" required />
                         </div>
-                        {loading ? <input type="submit" className="btn btn-primary w-full" value="Creating Account..." /> : <input type="submit" className="btn btn-primary w-full" value="Create Account" />
+                        {loading ? <input type="submit" className="btn btn-primary w-full" value="Creating Account..." disabled /> : <input type="submit" className="btn btn-primary w-full" value="Create Account" />
 
                         }
                     </div>

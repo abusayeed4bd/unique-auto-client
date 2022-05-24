@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './pages/Shared/Navbar';
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Home from './pages/Home/Home';
 import Login from './pages/Home/Login';
 import SignUp from './pages/Home/SignUp';
@@ -27,6 +29,7 @@ function App() {
       </Routes>
 
       <Footer></Footer>
+      <ToastContainer />
 
     </div>
   );

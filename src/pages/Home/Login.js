@@ -13,7 +13,11 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
     const handleLogin = event => {
-
+        event.preventDefault();
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        signInWithEmailAndPassword(email, password);
+        event.target.reset();
     }
     return (
         <div style={{ backgroundImage: `url(${banner})` }} class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-base-200 ">
@@ -36,7 +40,7 @@ const Login = () => {
                         <div className="w-full mx-auto">
                             <input type="password" name="password" placeholder="Password" class="input input-bordered w-full" required />
                         </div>
-                        {loading ? <input type="submit" className="btn btn-primary w-full" value="Creating Account..." /> : <input type="submit" className="btn btn-primary w-full" value="Create Account" />
+                        {loading ? <input type="submit" className="btn btn-primary w-full" value="Loading..." disabled /> : <input type="submit" className="btn btn-primary w-full" value="Create Account" />
 
                         }
                     </div>
