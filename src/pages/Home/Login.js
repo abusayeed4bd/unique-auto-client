@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import logo from '../../image/logo.png'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import banner from '../../image/bannerBg.png'
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
@@ -21,6 +21,16 @@ const Login = () => {
     const handleEmailBlur = event => {
         setEmail(event.target.value)
     }
+
+    // require auth 
+    let navigate = useNavigate();
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+    if (user || googleUser) {
+        navigate(from, { replace: true });
+    }
+
+    // login
     const handleLogin = event => {
         event.preventDefault();
         const email = event.target.email.value;
