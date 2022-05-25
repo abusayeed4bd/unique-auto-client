@@ -5,6 +5,7 @@ import banner from '../../image/bannerBg.png'
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
+import useToken from '../../hooks/useToken';
 
 const Login = () => {
     const [fEmail, setEmail] = useState('')
@@ -21,14 +22,18 @@ const Login = () => {
     const handleEmailBlur = event => {
         setEmail(event.target.value)
     }
+    const [token] = useToken(user || googleUser);
+
+
 
     // require auth 
     let navigate = useNavigate();
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
-    if (user || googleUser) {
+    if (token) {
         navigate(from, { replace: true });
     }
+
 
     // login
     const handleLogin = event => {

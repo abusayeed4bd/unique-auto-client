@@ -7,13 +7,17 @@ import logo from '../../image/logo.png'
 
 const Navbar = ({ children }) => {
     const [user] = useAuthState(auth)
+    const logOut = () => {
+        signOut(auth);
+        localStorage.removeItem('accessToken');
+    }
     const menuItem = (
         <>
             <li><NavLink to='/'>Home</NavLink></li>
             <li><NavLink to='/blog'>Blog</NavLink></li>
             <li><NavLink to='/Products'>Products</NavLink></li>
             <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
-            {user ? <button onClick={() => signOut(auth)} className="btn btn-link">Log Out </button> : <li><NavLink to='/login'>Login</NavLink></li>}
+            {user ? <button onClick={logOut} className="btn btn-link">Log Out </button> : <li><NavLink to='/login'>Login</NavLink></li>}
         </>
     )
     return (

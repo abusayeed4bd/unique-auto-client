@@ -1,10 +1,11 @@
 import React from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import logo from '../../image/logo.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import banner from '../../image/bannerBg.png'
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
+import useToken from '../../hooks/useToken';
 
 const SignUp = () => {
     const [
@@ -15,7 +16,12 @@ const SignUp = () => {
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    const [token] = useToken(user || googleUser);
 
+    const navigate = useNavigate()
+    if (token) {
+        navigate('/')
+    }
 
     const handelCreateUser = async (event) => {
         event.preventDefault();
@@ -31,9 +37,7 @@ const SignUp = () => {
         // field reset
         event.target.reset();
     }
-    if (user) {
-        console.log(user);
-    }
+
     const handleGoogleLogin = () => {
         signInWithGoogle()
     }
