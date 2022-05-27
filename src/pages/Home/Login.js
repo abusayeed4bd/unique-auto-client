@@ -78,7 +78,7 @@ const Login = () => {
                         <div className="w-full mx-auto">
                             <input type="password" name="password" placeholder="Password" class="input input-bordered w-full" required />
                         </div>
-                        {loading ? <input type="submit" className="btn btn-primary w-full" value="Loading..." disabled /> : <input type="submit" className="btn btn-primary w-full" value="Create Account" />
+                        {loading ? <input type="submit" className="btn btn-primary w-full" value="Loading..." disabled /> : <input type="submit" className="btn btn-primary w-full" value="Login" />
 
                         }
                     </div>

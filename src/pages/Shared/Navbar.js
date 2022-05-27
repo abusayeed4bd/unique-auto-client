@@ -18,7 +18,7 @@ const Navbar = ({ children }) => {
             <li><NavLink to='/blog'>Blog</NavLink></li>
             <li><NavLink to='/Products'>Products</NavLink></li>
             <li><NavLink to='/portfolio'>My Portfolio</NavLink></li>
-            <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
+            {user && <li><NavLink to='/dashboard'>Dashboard</NavLink></li>}
             {user ? <button onClick={logOut} className="btn btn-link">Log Out </button> : <li><NavLink to='/login'>Login</NavLink></li>}
         </>
     )

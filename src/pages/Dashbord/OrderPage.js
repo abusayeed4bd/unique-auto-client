@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
@@ -11,6 +13,7 @@ const OrderPage = ({ product }) => {
 
     const [total, setTotal] = useState(0);
     const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const handleQuantityChange = event => {
         const quantity = event.target.value;
@@ -44,7 +47,7 @@ const OrderPage = ({ product }) => {
 
 
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://unique-auto-parts.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -53,7 +56,15 @@ const OrderPage = ({ product }) => {
             body: JSON.stringify(order)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                console.log(data)
+                if (data.acknowledged) {
+                    event.target.reset();
+                    toast.success('Order added to card. Please confirm payment');
+                    navigate('/dashboard/orders');
+                }
+
+            })
 
     }
     if (loading || !user) {

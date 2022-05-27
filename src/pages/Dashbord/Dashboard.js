@@ -28,6 +28,7 @@ const Dashboard = () => {
                         <>
                             <li><NavLink to='/dashboard/addProducts'>Add Products</NavLink></li>
                             <li><NavLink to='/dashboard/users'>Manage Users</NavLink></li>
+                            
                         </>}
                 </ul>
 

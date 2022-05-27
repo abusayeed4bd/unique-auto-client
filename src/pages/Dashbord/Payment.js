@@ -12,7 +12,7 @@ const stripePromise = loadStripe('pk_test_51L27mkEtmtQujlnxSz02ZZbDSFWPZCjgVpKZR
 
 const Payment = () => {
     const { id } = useParams();
-    const url = `http://localhost:5000/payment/${id}`;
+    const url = `https://unique-auto-parts.herokuapp.com/payment/${id}`;
     const { data: order, isLoading } = useQuery(['payments', id], () => fetch(url, {
         method: 'GET',
         headers: {

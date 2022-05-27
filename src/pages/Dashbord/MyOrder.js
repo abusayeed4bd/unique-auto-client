@@ -4,10 +4,11 @@ import { useQuery } from 'react-query';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
 import { Link } from 'react-router-dom';
+import OrderRow from './OrderRow';
 
 const MyOrder = () => {
     const [user] = useAuthState(auth)
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`http://localhost:5000/orders/${user.email}`, {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`https://unique-auto-parts.herokuapp.com/orders/${user.email}`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -37,26 +38,8 @@ const MyOrder = () => {
                     </thead>
                     <tbody>
                         {
-                            orders.map((order, index) => <>
-                                <tr>
-                                    <th>{index}</th>
-                                    <td>{order.name}</td>
-                                    <td>{order.email}</td>
-                                    <td>{order.product}</td>
-                                    <td>{order.quantity}</td>
-                                    <td>${order.price}</td>
-                                    <td>{order.paid || <button className='btn btn-xs'>Cencel</button>}</td>
-                                    <td>
-                                        {order.paid ?
-                                            <button className="btn btn-success btn-xs">Paid</button> :
-                                            <Link to={`/payment/${order._id}`} className='btn btn-xs'>Pay</Link>
-                                        }
-                                    </td>
-                                </tr>
-                            </>)
+                            orders.map((order, index) => <OrderRow key={order._id} order={order} index={index} refetch={refetch}></OrderRow>)
                         }
-
-                        {/* <!-- row 2 --> */}
 
                     </tbody>
                 </table>

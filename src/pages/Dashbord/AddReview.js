@@ -10,7 +10,7 @@ const AddReview = () => {
         const rating = event.target.rating.value;
         const review = event.target.review.value;
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://unique-auto-parts.herokuapp.com/reviews', {
             method: "POST",
             headers: {
                 "content-type": "application/json",

@@ -12,7 +12,7 @@ const AddProducts = () => {
         const description = event.target.description.value;
 
 
-        fetch('http://localhost:5000/products', {
+        fetch('https://unique-auto-parts.herokuapp.com/products', {
             method: "POST",
             headers: {
                 "content-type": "application/json",
