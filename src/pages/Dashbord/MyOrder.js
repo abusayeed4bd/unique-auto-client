@@ -1,74 +1,57 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useQuery } from 'react-query';
+import auth from '../../firebase.init';
+import Loading from '../Shared/Loading';
 
 const MyOrder = () => {
+    const [user] = useAuthState(auth)
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`http://localhost:5000/orders/${user.email}`, {
+        method: 'GET',
+        headers: {
+            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    }).then(res => res.json()))
+
+    if (isLoading) {
+        return <Loading></Loading>
+    }
     return (
         <div>
             <h2 className="text-primary text-3xl font-bold py-5">My Order</h2>
             <div class="overflow-x-auto w-full">
-                <table class="table w-full">
+                <table class="table max-w-xs lg:max-w-lg w-full">
                     {/* <!-- head --> */}
                     <thead>
                         <tr>
                             <th></th>
                             <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
-                            <th>Favorite Color</th>
-                            <th>Favorite Color</th>
+                            <th>email</th>
+                            <th>Product</th>
+                            <th> Quantity</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                            <th>Pay</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {/* <!-- row 1 --> */}
-                        <tr>
-                            <th>1</th>
-                            <td>Cy Ganderton</td>
-                            <td>Quality Control Specialist</td>
-                            <td>Blue</td>
-                            <td>Blue</td>
-                            <td>Blue</td>
-                        </tr>
+                        {
+                            orders.map((order, index) => <>
+                                <tr>
+                                    <th>{index}</th>
+                                    <td>{order.name}</td>
+                                    <td>{order.email}</td>
+                                    <td>{order.product}</td>
+                                    <td>{order.quantity}</td>
+                                    <td>${order.price}</td>
+                                    <td><button className='btn btn-xs'>Cencel</button></td>
+                                    <td><button className='btn btn-xs'>Pay</button></td>
+                                </tr>
+                            </>)
+                        }
+
                         {/* <!-- row 2 --> */}
-                        <tr class="active">
-                            <th>2</th>
-                            <td>Hart Hagerty</td>
-                            <td>Desktop Support Technician</td>
-                            <td>Purple</td>
-                            <td>Purple</td>
-                            <td>Purple</td>
-                        </tr>
-                        {/* <!-- row 3 --> */}
-                        <tr>
-                            <th>3</th>
-                            <td>Brice Swyre</td>
-                            <td>Tax Accountant</td>
-                            <td>Red</td>
-                            <td>Red</td>
-                            <td>Red</td>
-                        </tr>
-                        <tr>
-                            <th>3</th>
-                            <td>Brice Swyre</td>
-                            <td>Tax Accountant</td>
-                            <td>Red</td>
-                            <td>Red</td>
-                            <td>Red</td>
-                        </tr>
-                        <tr>
-                            <th>3</th>
-                            <td>Brice Swyre</td>
-                            <td>Tax Accountant</td>
-                            <td>Red</td>
-                            <td>Red</td>
-                            <td>Red</td>
-                        </tr>
-                        <tr>
-                            <th>3</th>
-                            <td>Brice Swyre</td>
-                            <td>Tax Accountant</td>
-                            <td>Red</td>
-                            <td>Red</td>
-                            <td>Red</td>
-                        </tr>
+
                     </tbody>
                 </table>
             </div>
