@@ -32,13 +32,15 @@ function App() {
         <Route path="/portfolio" element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path="/product/:id" element={<RequireAuth><Purchese></Purchese></RequireAuth>}></Route>
         <Route path="/payment/:id" element={<RequireAuth><Payment></Payment></RequireAuth>}></Route>
+
         <Route path="/dashboard" element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
-          <Route index element={<MyProfile></MyProfile>} />
-          <Route path='addReview' element={<AddReview></AddReview>} />
+          <Route index element={<RequireAuth><MyProfile></MyProfile></RequireAuth>} />
+          <Route path='addReview' element={<RequireAuth><AddReview></AddReview></RequireAuth>} />
           <Route path='addProducts' element={<RequireAdmin><AddProducts></AddProducts></RequireAdmin>} />
-          <Route path='orders' element={<MyOrder></MyOrder>} />
+          <Route path='orders' element={<RequireAuth><MyOrder></MyOrder></RequireAuth>} />
           <Route path='users' element={<RequireAdmin><Users></Users></RequireAdmin>} />
         </Route>
+
         <Route path="*" element={<NotFound></NotFound>}></Route>
 
       </Routes>

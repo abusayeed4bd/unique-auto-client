@@ -45,8 +45,13 @@ const MyOrder = () => {
                                     <td>{order.product}</td>
                                     <td>{order.quantity}</td>
                                     <td>${order.price}</td>
-                                    <td><button className='btn btn-xs'>Cencel</button></td>
-                                    <td><Link to={`/payment/${order._id}`} className='btn btn-xs'>Pay</Link></td>
+                                    <td>{order.paid || <button className='btn btn-xs'>Cencel</button>}</td>
+                                    <td>
+                                        {order.paid ?
+                                            <button className="btn btn-success btn-xs">Paid</button> :
+                                            <Link to={`/payment/${order._id}`} className='btn btn-xs'>Pay</Link>
+                                        }
+                                    </td>
                                 </tr>
                             </>)
                         }
