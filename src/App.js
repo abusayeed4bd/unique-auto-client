@@ -19,6 +19,7 @@ import AddProducts from './pages/Dashbord/AddProducts';
 import Users from './pages/Dashbord/Users';
 import MyPortfolio from './pages/MyPortfolio/MyPortfolio';
 import RequireAdmin from './hooks/RequireAdmin';
+import Payment from './pages/Dashbord/Payment';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="/portfolio" element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path="/product/:id" element={<RequireAuth><Purchese></Purchese></RequireAuth>}></Route>
+        <Route path="/payment/:id" element={<RequireAuth><Payment></Payment></RequireAuth>}></Route>
         <Route path="/dashboard" element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route index element={<MyProfile></MyProfile>} />
           <Route path='addReview' element={<AddReview></AddReview>} />

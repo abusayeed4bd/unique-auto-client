@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
+import { Link } from 'react-router-dom';
 
 const MyOrder = () => {
     const [user] = useAuthState(auth)
@@ -45,7 +46,7 @@ const MyOrder = () => {
                                     <td>{order.quantity}</td>
                                     <td>${order.price}</td>
                                     <td><button className='btn btn-xs'>Cencel</button></td>
-                                    <td><button className='btn btn-xs'>Pay</button></td>
+                                    <td><Link to={`/payment/${order._id}`} className='btn btn-xs'>Pay</Link></td>
                                 </tr>
                             </>)
                         }
@@ -55,7 +56,7 @@ const MyOrder = () => {
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div >
     );
 };
 
