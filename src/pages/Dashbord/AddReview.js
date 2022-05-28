@@ -30,40 +30,40 @@ const AddReview = () => {
             <h2 className="text-3xl text-primary font-bold ">Add a Review</h2>
             <form onSubmit={handleAddReview} className="w-[90%] mx-auto">
 
-                <div class="form-control w-full ">
-                    <label class="label">
-                        <span class="label-text">Name</span>
+                <div className="form-control w-full ">
+                    <label className="label">
+                        <span className="label-text">Name</span>
 
                     </label>
-                    <input type="text" name="name" placeholder="Name" class="input input-bordered w-full " />
+                    <input type="text" name="name" placeholder="Name" className="input input-bordered w-full " />
 
                 </div>
-                <div class="form-control w-full ">
-                    <label class="label">
-                        <span class="label-text">Title</span>
+                <div className="form-control w-full ">
+                    <label className="label">
+                        <span className="label-text">Title</span>
 
                     </label>
-                    <input type="text" name="title" placeholder="ex: CEO" class="input input-bordered w-full " />
+                    <input type="text" name="title" placeholder="ex: CEO" className="input input-bordered w-full " />
 
                 </div>
-                <div class="form-control w-full ">
-                    <label class="label">
-                        <span class="label-text">Ratings</span>
+                <div className="form-control w-full ">
+                    <label className="label">
+                        <span className="label-text">Ratings</span>
 
                     </label>
-                    <input type="number" name="rating" placeholder="ratings out of 5" class="input input-bordered w-full " />
+                    <input type="number" name="rating" placeholder="ratings out of 5" className="input input-bordered w-full " />
 
                 </div>
-                <div class="form-control w-full ">
-                    <label class="label">
-                        <span class="label-text">Review</span>
+                <div className="form-control w-full ">
+                    <label className="label">
+                        <span className="label-text">Review</span>
 
                     </label>
-                    <textarea type="text" name="review" cols="30" rows="5" placeholder="Review" class="input input-bordered w-full h-32" />
+                    <textarea type="text" name="review" cols="30" rows="5" placeholder="Review" className="input input-bordered w-full h-32" />
 
 
                 </div>
-                <input type="submit" class="btn btn-primary w-full my-2" value="Submit" />
+                <input type="submit" className="btn btn-primary w-full my-2" value="Submit" />
 
             </form>
         </div>

@@ -75,29 +75,29 @@ const OrderPage = ({ product }) => {
             <h2 className="text-3xl text-primary font-bold">
                 Place Your Order
             </h2>
-            <form onSubmit={handleOrder} class="mt-8" >
+            <form onSubmit={handleOrder} className="mt-8" >
 
-                <div class="rounded-md shadow-sm space-y-3">
+                <div className="rounded-md shadow-sm space-y-3">
 
                     <div className="w-full mx-auto">
                         <label >Name</label>
-                        <input type="text" name="name" placeholder="Name" class="input input-bordered w-full" value={user?.displayName} readOnly />
+                        <input type="text" name="name" placeholder="Name" className="input input-bordered w-full" value={user?.displayName} readOnly />
                     </div>
                     <div className="w-full mx-auto">
                         <label >Email</label>
-                        <input type="email" name="email" placeholder="Email" class="input input-bordered w-full" value={user?.email} readOnly />
+                        <input type="email" name="email" placeholder="Email" className="input input-bordered w-full" value={user?.email} readOnly />
                     </div>
                     <div className="w-full mx-auto">
                         <label >Quantity</label>
-                        <input min={minOrder} max={available} onChange={handleQuantityChange} type="number" name="quantity" placeholder="Quantity" class="input input-bordered w-full" defaultValue={minOrder} required />
+                        <input min={minOrder} max={available} onChange={handleQuantityChange} type="number" name="quantity" placeholder="Quantity" className="input input-bordered w-full" defaultValue={minOrder} required />
                     </div>
                     <div className="w-full mx-auto">
                         <label >Price</label>
-                        <input type="number" name="price" placeholder="Price" class="input input-bordered w-full" value={total} readOnly />
+                        <input type="number" name="price" placeholder="Price" className="input input-bordered w-full" value={total} readOnly />
                     </div>
                     <div className="w-full mx-auto">
                         <label >Address</label>
-                        <input type="text" name="address" placeholder="Address" class="input input-bordered w-full" required />
+                        <input type="text" name="address" placeholder="Address" className="input input-bordered w-full" required />
                     </div>
                     {error && <p className='text-primary'>{error}</p>}
                     <input type="submit" className="btn btn-primary w-full" value="Place Order" />

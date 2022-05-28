@@ -31,56 +31,56 @@ const AddProducts = () => {
             <h2 className="text-3xl text-primary font-bold ">Add a Product</h2>
             <form onSubmit={handleAddProduct} className="w-[90%] mx-auto">
 
-                <div class="form-control w-full ">
-                    <label class="label">
-                        <span class="label-text">Name</span>
+                <div className="form-control w-full ">
+                    <label className="label">
+                        <span className="label-text">Name</span>
 
                     </label>
-                    <input type="text" name="name" placeholder="Name" class="input input-bordered w-full " />
+                    <input type="text" name="name" placeholder="Name" className="input input-bordered w-full " />
 
                 </div>
-                <div class="form-control w-full ">
-                    <label class="label">
-                        <span class="label-text">Price</span>
+                <div className="form-control w-full ">
+                    <label className="label">
+                        <span className="label-text">Price</span>
 
                     </label>
-                    <input type="text" name="price" placeholder="Price" class="input input-bordered w-full " />
+                    <input type="text" name="price" placeholder="Price" className="input input-bordered w-full " />
 
                 </div>
-                <div class="form-control w-full ">
-                    <label class="label">
-                        <span class="label-text">Available</span>
+                <div className="form-control w-full ">
+                    <label className="label">
+                        <span className="label-text">Available</span>
 
                     </label>
-                    <input type="number" name="available" placeholder="Available Quantity" class="input input-bordered w-full " />
+                    <input type="number" name="available" placeholder="Available Quantity" className="input input-bordered w-full " />
 
                 </div>
-                <div class="form-control w-full ">
-                    <label class="label">
-                        <span class="label-text">Min Order</span>
+                <div className="form-control w-full ">
+                    <label className="label">
+                        <span className="label-text">Min Order</span>
 
                     </label>
-                    <input type="number" name="minOrder" placeholder="Min Order Quantity" class="input input-bordered w-full " />
+                    <input type="number" name="minOrder" placeholder="Min Order Quantity" className="input input-bordered w-full " />
 
                 </div>
-                <div class="form-control w-full ">
-                    <label class="label">
-                        <span class="label-text">Photo URL</span>
+                <div className="form-control w-full ">
+                    <label className="label">
+                        <span className="label-text">Photo URL</span>
 
                     </label>
-                    <input type="text" name="img" placeholder="Photo URL" class="input input-bordered w-full " />
+                    <input type="text" name="img" placeholder="Photo URL" className="input input-bordered w-full " />
 
                 </div>
-                <div class="form-control w-full ">
-                    <label class="label">
-                        <span class="label-text">Description</span>
+                <div className="form-control w-full ">
+                    <label className="label">
+                        <span className="label-text">Description</span>
 
                     </label>
-                    <textarea type="text" name="description" cols="30" rows="5" placeholder="Description" class="input input-bordered w-full h-32" />
+                    <textarea type="text" name="description" cols="30" rows="5" placeholder="Description" className="input input-bordered w-full h-32" />
 
 
                 </div>
-                <input type="submit" class="btn btn-primary w-full my-2" value="Submit" />
+                <input type="submit" className="btn btn-primary w-full my-2" value="Submit" />
 
             </form>
         </div>

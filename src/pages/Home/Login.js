@@ -56,14 +56,14 @@ const Login = () => {
         signInWithGoogle()
     }
     return (
-        <div style={{ backgroundImage: `url(${banner})` }} class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-base-200 ">
-            <div class="max-w-md lg:w-1/2 p-8 space-y-8 shadow-lg bg-base-100 rounded-xl">
+        <div style={{ backgroundImage: `url(${banner})` }} className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-base-200 ">
+            <div className="max-w-md lg:w-1/2 p-8 space-y-8 shadow-lg bg-base-100 rounded-xl">
                 <div>
-                    <img class="mx-auto h-12 w-auto" src={logo} alt="Workflow" />
-                    <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
-                    <p class="mt-2 text-center text-sm text-gray-600">
+                    <img className="mx-auto h-12 w-auto" src={logo} alt="Workflow" />
+                    <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
+                    <p className="mt-2 text-center text-sm text-gray-600">
                         Or
-                        <Link to='/signup' class="font-medium text-primary hover:text-secondary"> Create an account </Link>
+                        <Link to='/signup' className="font-medium text-primary hover:text-secondary"> Create an account </Link>
                     </p>
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)} className="w-[90%] mx-auto">
@@ -125,7 +125,7 @@ const Login = () => {
                     error && <p className="text-error text-center">{error.message}</p>
                 }
                 <p className="!m-0  ">forgot password? <button onClick={handleResetPassword} className="btn btn-link !mt-0 p-0">reset</button></p>
-                <div class="divider">OR</div>
+                <div className="divider">OR</div>
                 {googleLoading ? <button className="btn btn-primary btn-outline w-full btn-sm">Loading ...</button> :
                     <button onClick={handleGoogleLogin} className="btn btn-primary btn-outline w-full btn-sm">SignIn with Google</button>}
 

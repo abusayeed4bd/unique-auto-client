@@ -5,7 +5,7 @@ const ProductRow = ({ product, index, refetch }) => {
     const hendleDelete = () => {
         const proceed = window.confirm('are you sue to delete product?')
         if (proceed) {
-            fetch(`http://localhost:5000/product/${_id}`, {
+            fetch(`https://unique-auto-parts.herokuapp.com/product/${_id}`, {
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json'

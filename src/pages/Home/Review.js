@@ -3,8 +3,8 @@ import React from 'react';
 const Review = ({ review }) => {
     const { name, comment, rating, title } = review;
     return (
-        <div class="card  bg-base-100 shadow-xl">
-            <div class="card-body">
+        <div className="card  bg-base-100 shadow-xl">
+            <div className="card-body">
                 <p>{comment}</p>
                 <div className="flex items-center justify-center">
                     <span>{rating}</span>
@@ -13,7 +13,7 @@ const Review = ({ review }) => {
                     </svg>
 
                 </div>
-                <h2 class="text-2xl text-primary font-bold">{name}</h2>
+                <h2 className="text-2xl text-primary font-bold">{name}</h2>
                 <p className="text-secondary">{title}</p>
 
             </div>

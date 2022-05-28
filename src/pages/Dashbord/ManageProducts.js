@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading';
 import ProductRow from './ProductRow';
 
 const ManageProducts = () => {
-    const { data: products, isLoading, refetch } = useQuery('orders', () => fetch('http://localhost:5000/products').then(res => res.json()))
+    const { data: products, isLoading, refetch } = useQuery('orders', () => fetch('https://unique-auto-parts.herokuapp.com/products').then(res => res.json()))
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -15,8 +15,8 @@ const ManageProducts = () => {
             </h2>
 
 
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
 
                     <thead>
                         <tr>

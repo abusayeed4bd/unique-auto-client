@@ -42,27 +42,27 @@ const SignUp = () => {
         signInWithGoogle()
     }
     return (
-        <div style={{ backgroundImage: `url(${banner})` }} class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-base-200 ">
-            <div class="max-w-md w-full space-y-8 lg:w-1/2 bg-base-100 p-8 rounded-lg">
+        <div style={{ backgroundImage: `url(${banner})` }} className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-base-200 ">
+            <div className="max-w-md w-full space-y-8 lg:w-1/2 bg-base-100 p-8 rounded-lg">
                 <div>
-                    <img class="mx-auto h-12 w-auto" src={logo} alt="Workflow" />
-                    <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Create an Account</h2>
-                    <p class="mt-2 text-center text-sm text-gray-600">
+                    <img className="mx-auto h-12 w-auto" src={logo} alt="Workflow" />
+                    <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Create an Account</h2>
+                    <p className="mt-2 text-center text-sm text-gray-600">
                         Or
-                        <Link to="/login" class="font-medium text-primary hover:text-indigo-500"> Login</Link>
+                        <Link to="/login" className="font-medium text-primary hover:text-indigo-500"> Login</Link>
                     </p>
                 </div>
-                <form onSubmit={handelCreateUser} class="mt-8" >
+                <form onSubmit={handelCreateUser} className="mt-8" >
 
-                    <div class="rounded-md shadow-sm space-y-3">
+                    <div className="rounded-md shadow-sm space-y-3">
                         <div className="w-full mx-auto">
-                            <input type="text" name="name" placeholder="Name" class="input input-bordered w-full" required />
+                            <input type="text" name="name" placeholder="Name" className="input input-bordered w-full" required />
                         </div>
                         <div className="w-full mx-auto">
-                            <input type="email" name="email" placeholder="Email" class="input input-bordered w-full" required />
+                            <input type="email" name="email" placeholder="Email" className="input input-bordered w-full" required />
                         </div>
                         <div className="w-full mx-auto">
-                            <input type="password" name="password" placeholder="Password" class="input input-bordered w-full" required />
+                            <input type="password" name="password" placeholder="Password" className="input input-bordered w-full" required />
                         </div>
                         {loading ? <input type="submit" className="btn btn-primary w-full" value="Creating Account..." disabled /> : <input type="submit" className="btn btn-primary w-full" value="Create Account" />
 
@@ -77,7 +77,7 @@ const SignUp = () => {
 
 
                 </form>
-                <div class="divider">OR</div>
+                <div className="divider">OR</div>
                 {googleLoading ? <button className="btn btn-primary btn-outline w-full btn-sm">Loading ...</button> :
                     <button onClick={handleGoogleLogin} className="btn btn-primary btn-outline w-full btn-sm">SignIn with Google</button>}
             </div>

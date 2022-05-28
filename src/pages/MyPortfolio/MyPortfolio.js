@@ -54,33 +54,33 @@ const MyPortfolio = () => {
             </div>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-5'>
 
-                <div class="card w-96 bg-base-100 shadow-xl">
+                <div className="card w-96 bg-base-100 shadow-xl">
                     <figure><img src={broker} alt="Shoes" /></figure>
-                    <div class="card-body">
-                        <h2 class="card-title text-primary">Broker website</h2>
+                    <div className="card-body">
+                        <h2 className="card-title text-primary">Broker website</h2>
 
-                        <div class="card-actions justify-end">
-                            <a href='https://react-broker-website.web.app/' class="btn btn-primary">Live Link</a>
+                        <div className="card-actions justify-end">
+                            <a href='https://react-broker-website.web.app/' className="btn btn-primary">Live Link</a>
                         </div>
                     </div>
                 </div>
-                <div class="card w-96 bg-base-100 shadow-xl">
+                <div className="card w-96 bg-base-100 shadow-xl">
                     <figure><img src={laptop} alt="Shoes" /></figure>
-                    <div class="card-body">
-                        <h2 class="card-title text-primary">Laptop Analysis bd</h2>
+                    <div className="card-body">
+                        <h2 className="card-title text-primary">Laptop Analysis bd</h2>
 
-                        <div class="card-actions justify-end">
-                            <a href='https://laptopanalysisbd.netlify.com/' class="btn btn-primary">Live Link</a>
+                        <div className="card-actions justify-end">
+                            <a href='https://laptopanalysisbd.netlify.com/' className="btn btn-primary">Live Link</a>
                         </div>
                     </div>
                 </div>
-                <div class="card w-96 bg-base-100 shadow-xl">
+                <div className="card w-96 bg-base-100 shadow-xl">
                     <figure><img src={warehouse} alt="Shoes" /></figure>
-                    <div class="card-body">
-                        <h2 class="card-title text-primary">Warehouse Website</h2>
+                    <div className="card-body">
+                        <h2 className="card-title text-primary">Warehouse Website</h2>
 
-                        <div class="card-actions justify-end">
-                            <a href="https://react-node-mongo-warehouse.web.app/" class="btn btn-primary">Live Link</a>
+                        <div className="card-actions justify-end">
+                            <a href="https://react-node-mongo-warehouse.web.app/" className="btn btn-primary">Live Link</a>
                         </div>
                     </div>
                 </div>

@@ -9,7 +9,7 @@ const MyProfile = () => {
     const [user] = useAuthState(auth);
 
 
-    const { data: people, refetch } = useQuery('user', () => fetch(`http://localhost:5000/user/${user.email}`).then(res => res.json()))
+    const { data: people, refetch } = useQuery('user', () => fetch(`https://unique-auto-parts.herokuapp.com/user/${user.email}`).then(res => res.json()))
     return (
         <div className='mt-8 h-screen w-[90%] mx-auto'>
             <h2 className="text-primary text-3xl">My Profile</h2>
@@ -46,7 +46,7 @@ const MyProfile = () => {
 
 
 
-            <label for="my-modal-3" class="btn modal-button">Update Profile</label>
+            <label for="my-modal-3" className="btn modal-button">Update Profile</label>
             <UpdateProfile user={user} refetch={refetch} />
         </div>
     );

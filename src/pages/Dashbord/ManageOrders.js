@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading';
 import OrderPage from './OrderPage';
 
 const ManageOrders = () => {
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('http://localhost:5000/orders').then(res => res.json()))
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('https://unique-auto-parts.herokuapp.com/orders').then(res => res.json()))
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -13,8 +13,8 @@ const ManageOrders = () => {
             <h2 className="text-3xl text-primary">Manage Orders: </h2>
 
 
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
 
                     <thead>
                         <tr>
@@ -29,7 +29,7 @@ const ManageOrders = () => {
                     <tbody>
 
                         {
-                            orders.map((order, index) => <tr>
+                            orders.map((order, index) => <tr key={index}>
                                 <th>{index + 1}</th>
                                 <td>{order?.name}</td>
                                 <td>{order?.email}</td>

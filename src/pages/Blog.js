@@ -68,12 +68,11 @@ const Blog = () => {
                 <p className="text-lg">
                     A unit test is a way of testing a unit - the smallest piece of code that can be logically isolated in a system
 
-                    <ul>
-                        <li> Using re useable component</li>
-                        <li> cache data to browser</li>
-                        <li> Using reselect selectors</li>
-                        <li> Compress images</li>
-                    </ul>
+
+                </p>
+                <p className="text-lg">
+                    For the best practice, all projects must be under unit testing, but normally it is used for larger projects. Smaller projects can still benefit from unit tests, but project managers and clients should evaluate the time needed to develop unit tests during the project.
+
                 </p>
             </div>
         </div>

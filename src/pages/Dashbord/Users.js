@@ -17,8 +17,8 @@ const Users = () => {
     return (
         < div >
             <h2 className='text-3xl text-primary font-bold'>Users: {users.length}</h2>
-            <div class="overflow-x-auto w-full">
-                <table class="table w-full">
+            <div className="overflow-x-auto w-full">
+                <table className="table w-full">
                     {/* <!-- head --> */}
                     <thead>
                         <tr>

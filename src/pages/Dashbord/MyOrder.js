@@ -21,8 +21,8 @@ const MyOrder = () => {
     return (
         <div>
             <h2 className="text-primary text-3xl font-bold py-5">My Order</h2>
-            <div class="overflow-x-auto w-full">
-                <table class="table max-w-xs lg:max-w-lg w-full">
+            <div className="overflow-x-auto w-full">
+                <table className="table max-w-xs lg:max-w-lg w-full">
                     {/* <!-- head --> */}
                     <thead>
                         <tr>

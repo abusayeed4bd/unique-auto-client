@@ -25,10 +25,10 @@ const Purchese = () => {
 
     return (
         <div className='py-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:w-2/3 mx-auto'>
-            <div class="card card-compact   bg-base-100 ">
+            <div className="card card-compact   bg-base-100 ">
                 <figure><img className="h-[200px]" src={img} alt="Shoes" /></figure>
-                <div class="card-body text-center">
-                    <h2 class="text-4xl text-secondary font-bold">{name}</h2>
+                <div className="card-body text-center">
+                    <h2 className="text-4xl text-secondary font-bold">{name}</h2>
                     <table className='table table-full'>
 
                         <tbody>
@@ -55,7 +55,7 @@ const Purchese = () => {
 
                 </div>
             </div>
-            <div class="card card-compact    bg-base-100">
+            <div className="card card-compact    bg-base-100">
                 <OrderPage product={product} user={user}></OrderPage>
             </div>
 
