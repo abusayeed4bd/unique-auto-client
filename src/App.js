@@ -21,6 +21,9 @@ import MyPortfolio from './pages/MyPortfolio/MyPortfolio';
 import RequireAdmin from './hooks/RequireAdmin';
 import Payment from './pages/Dashbord/Payment';
 import ProductPage from './pages/ProductPage';
+import ManageOrders from './pages/Dashbord/ManageOrders';
+import ManageProducts from './pages/Dashbord/ManageProducts';
+import Blog from './pages/Blog';
 
 
 function App() {
@@ -32,6 +35,7 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="/portfolio" element={<MyPortfolio></MyPortfolio>}></Route>
+        <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="/products" element={<ProductPage></ProductPage>}></Route>
         <Route path="/product/:id" element={<RequireAuth><Purchese></Purchese></RequireAuth>}></Route>
         <Route path="/payment/:id" element={<RequireAuth><Payment></Payment></RequireAuth>}></Route>
@@ -42,6 +46,8 @@ function App() {
           <Route path='addProducts' element={<RequireAdmin><AddProducts></AddProducts></RequireAdmin>} />
           <Route path='orders' element={<RequireAuth><MyOrder></MyOrder></RequireAuth>} />
           <Route path='users' element={<RequireAdmin><Users></Users></RequireAdmin>} />
+          <Route path='manageOrders' element={<RequireAdmin><ManageOrders></ManageOrders></RequireAdmin>} />
+          <Route path='manageProducts' element={<RequireAdmin><ManageProducts></ManageProducts></RequireAdmin>} />
 
         </Route>
 
