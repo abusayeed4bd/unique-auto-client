@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { useQuery } from 'react-query';
+import Loading from '../Shared/Loading';
 import Review from './Review';
 
 const Reviews = () => {
-    const [reviews, setReviews] = useState([]);
-    useEffect(() => {
-        fetch('https://unique-auto-parts.herokuapp.com/reviews')
-            .then(res => res.json())
-            .then(data => setReviews(data))
-    }, [])
+    // const [reviews, setReviews] = useState([]);
+    const { data: reviews, isLoading } = useQuery('reviews', () => fetch('https://unique-auto-parts.herokuapp.com/reviews')
+        .then(res => res.json()))
+    if (isLoading) {
+        return <Loading></Loading>
+    }
     return (
         <div className='text-center py-12'>
             <div className="mb-8">

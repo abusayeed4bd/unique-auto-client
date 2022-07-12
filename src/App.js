@@ -27,6 +27,7 @@ import Blog from './pages/Blog';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import WhyUs from './pages/Home/WhyUs';
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
         <Route path="/portfolio" element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="/products" element={<ProductPage></ProductPage>}></Route>
+        <Route path="/about" element={<WhyUs></WhyUs>}></Route>
         <Route path="/product/:id" element={<RequireAuth><Purchese></Purchese></RequireAuth>}></Route>
         <Route path="/payment/:id" element={<RequireAuth><Payment></Payment></RequireAuth>}></Route>
 

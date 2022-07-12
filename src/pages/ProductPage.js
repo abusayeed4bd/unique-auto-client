@@ -1,11 +1,11 @@
 import React from 'react';
-import Product from './Home/Product';
+import Products from './Home/Products';
 
 const ProductPage = () => {
-    return (<>
-
-
-    </>
+    return (
+        <div>
+            <Products></Products>
+        </div>
     );
 };
 

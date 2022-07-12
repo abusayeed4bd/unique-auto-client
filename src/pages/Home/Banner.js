@@ -10,8 +10,8 @@ const Banner = () => {
                 <div className="lg:w-1/2 text-center lg:text-left">
                     <h1 data-aos="fade-right" data-aos-duration="1000" className="text-5xl font-bold">OEM and Aftermarket
                         Auto Parts Wholesale</h1>
-                    <p data-aos="fade-right" data-aos-duration="1000" className="py-6">We pride foremost on servicing custom and hard-to-find auto parts for your business needs, especially parts for classic cars, motorcycles and trucks, offering a complete supply chain solution to independent distributors, dealerships and wholesalers.</p>
-                    <button data-aos="fade-right" data-aos-duration="1000" className="btn btn-primary text-white ">Get Started</button>
+                    <p data-aos="fade-right" data-aos-duration="2000" className="py-6">We pride foremost on servicing custom and hard-to-find auto parts for your business needs, especially parts for classic cars, motorcycles and trucks, offering a complete supply chain solution to independent distributors, dealerships and wholesalers.</p>
+                    <button data-aos="fade-right" data-aos-duration="3000" className="btn btn-primary text-white ">Get Started</button>
                 </div>
             </div>
         </div>

@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import Product from './Product';
+import { useQuery } from 'react-query';
+import Loading from '../Shared/Loading';
+
 
 const Products = () => {
-    const [products, setProducts] = useState([])
-    useEffect(() => {
-        fetch('https://unique-auto-parts.herokuapp.com/products')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, [])
+
+    const { data: products, isLoading } = useQuery('products', () => fetch('https://unique-auto-parts.herokuapp.com/products')
+        .then(res => res.json()))
+    // fetch('https://unique-auto-parts.herokuapp.com/products')
+    //     .then(res => res.json())
+    //     .then(data => setProducts(data))
+
+    if (isLoading) {
+        return <Loading></Loading>
+    }
     return (
         <div className="py-12 bg-base-100">
             <div data-aos="zoom-in" data-aos-duration="1000" className="mb-8">
